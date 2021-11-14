@@ -1,6 +1,8 @@
 class Comment < ApplicationRecord
   # アソシエーション
   belongs_to :user
+  has_many   :responses
+  has_many   :favorites
   
   # バリデーション
   validates :user_id,       presence: true

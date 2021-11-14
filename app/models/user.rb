@@ -6,6 +6,9 @@ class User < ApplicationRecord
          
   # アソシエーション
   has_many :comments
+  has_many :responses
+  has_many :favorites
+  has_many :add_intros
   
   # バリデーション
   validates :name,       presence: true, length: {maximum: 20}

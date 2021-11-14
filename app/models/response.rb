@@ -2,6 +2,7 @@ class Response < ApplicationRecord
   # アソシエーション
   belongs_to :user
   belongs_to :comment
+  has_many   :favorites
   
   # バリデーション
   validates :user_id,     presence: true
