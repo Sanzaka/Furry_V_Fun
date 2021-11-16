@@ -2,6 +2,7 @@ class AddIntro < ApplicationRecord
   # アソシエーション
   belongs_to :user
   belongs_to :streamer
+  has_many :favorites, dependent: :destroy
   
   # バリデーション
   validates :user_id,     presence: true

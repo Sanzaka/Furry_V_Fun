@@ -5,10 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   # アソシエーション
-  has_many :comments
-  has_many :responses
-  has_many :favorites
-  has_many :add_intros
+  has_many :comments, dependent: :destroy
+  has_many :responses, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :add_intros, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :tag_relationships, dependent: :destroy
+  has_many :tags, through: :tag_relationships
   
   # バリデーション
   validates :name,       presence: true, length: {maximum: 20}
